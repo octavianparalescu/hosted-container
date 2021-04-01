@@ -19,9 +19,10 @@ services:
   db:
     env_file:
       - ./.env
-    image: mysql:latest
+    image: mariadb:10.5.9-focal
     volumes:
       - ./docker/data/mysqldata:/var/lib/mysql
+      - ./mysql-dump.sql:/docker-entrypoint-initdb.d/entrypoint.sql
     environment:
       MYSQL_ROOT_PASSWORD: root
     restart: "always"
