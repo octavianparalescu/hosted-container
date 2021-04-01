@@ -2,7 +2,7 @@ version: "3.8"
 services:
   http:
     build:
-      context: ./
+      context: ./http
       args:
         - PHP_VERSION=${PHP_VERSION}
     volumes:
